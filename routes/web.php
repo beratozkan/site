@@ -17,6 +17,6 @@ use App\Http\Livewire\Update;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('adduser', ['uses' => 'App\Http\Livewire\ShowUsers@adduser']);
+Route::get('adduse', ['uses' => 'App\Http\Livewire\ShowUsers@adduser']);
 //Route::post('update', 'App\Http\Livewire\Update@update');
 

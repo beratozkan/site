@@ -15,16 +15,16 @@ class ShowUsers extends Component
     public $name1;
     public $surname1;
     public $email1;
+    public $deletecon=false;
     public $passwd;
     public $r_passwd;
     public $update1 = false;
     protected $rules = [
         'name'=>'required',
         'surname'=>'required',
-        'email'=>'required',
+        'email'=>'required|email',
         
     ];
-  
   
   
     
@@ -35,12 +35,21 @@ class ShowUsers extends Component
             'users' => User::paginate(10),
         ]);
     }
+    public function del1($id){
+        $this->deletecon = true;
+        $this->selected_id = $id;
+    }
+    public function del2(){
+        $this->deletecon = false;
+       
+    }
     public function delete($id){
         $user = User::find($id);
         $user->delete();
         if($this->update1){
             $this->update1 = false;
-            $this->resetInputFields(); 
+            $this->resetInputFields();
+            $this->deletecon = false;
         }
     }
   
@@ -60,17 +69,18 @@ class ShowUsers extends Component
         }
         else{
             
-            $this->validate([
+            $posts = $this->validate([
                 'name' => 'required',
                 'surname' => 'required',
                 
                 'passwd' => 'required',
                 'r_passwd' => 'required |same:passwd',
-                'email' => 'required'
+                'email' => 'required | unique:users,email'
             ]);
+            
         User::create(['name' => $this->name, 'surname' => $this->surname,'email' => $this->email,"password"=>$this->passwd]);
         //User::create(['name' => "ab", 'surname' => "abs",'email' => "av","password"=>"a"]);
-
+        
         $this->resetInputFields(); 
       
         
@@ -86,6 +96,24 @@ class ShowUsers extends Component
         $this->update1 = true;
 
     }
+
+
+   
+   public function messages() 
+   {
+       return [
+       'name.required' => 'isim boş kalamaz',
+       'surname.required'  => 'soyisim boş kalamaz',
+       'email.required'  => 'email  boş kalamaz ',
+       'passwd.required'  => 'şifre boş kalamaz ',
+       'name1.required' => 'isim boş kalamaz',
+       'surname1.required'  => 'soyisim boş kalamaz',
+       'email1.required'  => 'email  boş kalamaz ',
+        'email1.unique' => 'bu email kullanılyor',
+        'email.unique' => 'bu email kullanılyor',
+       
+   ];
+   }
     public function update()
     {
         
@@ -93,7 +121,7 @@ class ShowUsers extends Component
             'selected_id' => 'required',
             'name1' => 'required',
             'surname1' => 'required',
-            'email1' => 'required',
+            'email1' => 'required|unique:users,email,'. $this->selected_id,
             
         ]);
         if ($this->selected_id) {

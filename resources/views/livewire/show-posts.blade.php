@@ -20,7 +20,7 @@
 </div>
                                 <div class="slot"> 
                                 <label >şifre</label>  
-
+    
                                 <input type="password" wire:model="passwd" placeholder = "password">
                                 @error('passwd') <span class="error">{{ $message }}</span> @enderror
 

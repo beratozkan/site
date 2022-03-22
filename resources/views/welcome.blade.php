@@ -150,9 +150,9 @@ form.tr{
 span.th{
 
 padding: 13px;
-
+text-align:center;
 position: relative;
-left:10px;
+width:20%;
 font-weight: bold;
 display:table-cell	;
 
@@ -219,6 +219,24 @@ span.td{
     width:5px;
 }
     
+.confirmdel{
+
+
+
+}
+.container {
+  display: ""; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+ 
+  width: 30%; /* Full width */
+  height: 30%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  opacity: 0.7;
+  padding: 50px;
+}
+
     </style>
 
         @livewireStyles
@@ -235,6 +253,14 @@ span.td{
                 @livewireScripts  
 
                 <script>
+
+        function confirmdel(){
+            setInterval((event) => {
+   console.log(event.target.id)
+
+}, 1000);
+
+        }
   function fonks(){
 
 

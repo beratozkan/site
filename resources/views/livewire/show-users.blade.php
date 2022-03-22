@@ -23,7 +23,7 @@
             <span class="th name">surname</span>
             <span class="th email">email</span>
             <span class="th email">action</span>
-        </div>
+        </div>  
     @foreach ($users as $user)
     @if($update1 && $selected_id == $user->id)
     @include('livewire.update')
@@ -34,24 +34,29 @@
     <span class="th surname" style="font-weight: normal;">{{ $user->surname }}</span>
     <span class="th email" style="font-weight: normal;">{{ $user->email }}</span>
     
-</span></span>
+
     
     <span class="th control">
+    
+      @if($deletecon &&  $selected_id == $user->id)
+      @include('livewire.delete')
+      @else
    
   
-    <span class="material-icons-outlined" wire:click="delete({{$user->id}})" style="cursor:pointer">
+<span class="material-icons-outlined" wire:click="del1({{ $user->id }})" style="cursor:pointer">
 delete_forever
 </span>
-       
+
+
     <span style = "cursor:pointer"class="material-icons-outlined" wire:click="edit({{$user->id}})">
 edit
 </span>
 
-   
+  @endif
    
     </span>
    
-    
+  
  
     
     
@@ -62,7 +67,7 @@ edit
     @endforeach
     </div>
    
-
+    
 </div>
        
 </div>
