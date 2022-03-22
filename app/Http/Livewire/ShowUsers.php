@@ -64,7 +64,7 @@ class ShowUsers extends Component
     public function adduser()
     {
         if($this->passwd != $this->r_passwd){
-            session()->flash('message', "password's have to be same"); 
+            session()->flash('message', "şirfreler aynı olmalıdır"); 
             
         }
         else{
