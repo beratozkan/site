@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\ShowUsers;
 use App\Http\Livewire\Update;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +15,20 @@ use App\Http\Livewire\Update;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('adduse', ['uses' => 'App\Http\Livewire\ShowUsers@adduser']);
-//Route::post('update', 'App\Http\Livewire\Update@update');
 
+
+
+ Route::get('/login',function() {
+    return view('loginpage');
+ });
+ Route::get('/',function() {
+   return view('welcome');
+})->middleware('userauth');
+
+Route::get('/testekle',function() {
+   return view('welcome');
+});
+
+Route::post('adminLogin',"App\Http\Controllers\adminlogin@loginuser");
+
+ 
