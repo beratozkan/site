@@ -24,7 +24,7 @@ class userauth
       if (Auth::check()) {
         return $next($request);
     }
-    return redirect("login");
+    return redirect("userpage");
 }
 
 }

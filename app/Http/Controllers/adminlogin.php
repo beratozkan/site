@@ -8,7 +8,7 @@ use App\Models\User;
 use Auth;
 class adminlogin extends Controller
 {
-
+    public $msg = "";
     function loginuser(Request $request)
     {
        
@@ -20,16 +20,19 @@ class adminlogin extends Controller
         
         if (Auth::attempt($credentials) ){
             
-            
-            return redirect()->to("/");
+            if(Auth()->user()->role =="admin"){
+                return redirect()->to("userpage");;
+            }
+            else{
+                return redirect()->to("userpage");
+
+            }
         }
         else{
-            return redirect()->back();
+            return back()->withErrors(["error_login"=>"user not found"]);
         }
-     
-        return back()->withErrors([
-            'email' => 'not found in our database',
-        ])->onlyInput(['email']);
+        
+        
      
 
     }   

@@ -133,7 +133,7 @@ span.th{
 padding: 13px;
 text-align:center;
 position: relative;
-width:20%;
+
 font-weight: bold;
 display:table-cell	;
 
@@ -221,12 +221,54 @@ span.td{
     display:inline-block;
    
     cursor: pointer;
-    float:right;
+    float:left;
     color:red;
 }
 .banner {
+    float:left;
+    position: relative;
+    top:50px;
+    right:50px;
+    color:red;
+}
+.login_modal{
+    display:inline-flex;
+    flex-direction: column;
+    
+}
+
+.buttton{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    
+}
+.loginPanel{
     float:right;
     position: relative;
     top:50px;
-    color:red;
+
+}
+.loginPanel input{
+    border:1px solid;
+}
+.nav{
+    
+    width: 90%;
+    min-height:20px;
+
+}
+.rightbar{
+    float: right;
+    display: inline-flex;
+}
+.leftbar{
+    float: left;
+    display:inline-flex;
+}
+.leftbar span{
+    cursor: pointer;
+}
+.rightbar span{
+    cursor: pointer;
 }

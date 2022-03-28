@@ -5,9 +5,12 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\User;
 use Illuminate\Http\Request;
+use auth;
+use Hash;
 
 class UserEkle extends Component
 {
+    public $adminPassword;
     public $name;
     public $surname;
     public $email;
@@ -15,6 +18,7 @@ class UserEkle extends Component
     public $password;
     public $r_password;
     public $role;
+    
     private function resetInputFields(){ 
 
         $this->name = ''; 
@@ -22,7 +26,7 @@ class UserEkle extends Component
         $this->password="";
         $this->r_password="";
         $this->email = '';}
-
+        
     public function messages() 
    {
        return [
@@ -40,18 +44,20 @@ class UserEkle extends Component
         
     public function render()
     {
+        
         return view('livewire.user-ekle');
     }
     
     
     public function adduser()
     {
+        
+       
         if($this->password != $this->r_password){
             session()->flash('message', "şifreler aynı olmalıdır"); 
             
         }
         else{
-            
             $posts = $this->validate([
                 'name' => 'required',
                 'surname' => 'required',
@@ -62,6 +68,12 @@ class UserEkle extends Component
             ]);
         if(!$this->role){
             $this->role = "user";
+        }
+        if($this->role == "admin" && Hash::check($this->adminPassword,auth()->user()->password) ){
+            session()->flash('message', "kullanıcı eklendi"); 
+        }
+        else{
+            session()->flash('message', "admin şifresi yanlış"); 
         }
         $this->password = bcrypt($this->password);
         User::create(['name' => $this->name, 'surname' => $this->surname,'email' => $this->email,"password"=>$this->password,"role"=>$this->role]);

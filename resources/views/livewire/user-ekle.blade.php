@@ -44,9 +44,12 @@
         <select name="role" wire:model="role">
         <option value="user" selected>user</option>
             <option value="admin">admin</option>
-            
+        
             
       </select>
+      @if($role == "admin")
+        <input type="text" wire:model="adminPassword" placeholder="admin şifresi">
+        @endif
     </div>
                         <div class="slot" style="margin-left:20px;">
                             <button type="submit" wire:click="adduser">
@@ -60,5 +63,6 @@
                             @endif
 
                         </div>
-    
+                        
 </div>
+

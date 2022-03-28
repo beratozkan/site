@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Update;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 
 /*
@@ -21,14 +23,27 @@ use App\Http\Livewire\Update;
  Route::get('/login',function() {
     return view('loginpage');
  });
- Route::get('/',function() {
+ /*Route::get('/',function() {
    return view('welcome');
-})->middleware('userauth');
-
+})->middleware('userauth');*/
+Route::get('/',function() {
+   return view('userpage');
+});
 Route::get('/testekle',function() {
    return view('welcome');
 });
+/*Route::get('{any}',function() {
+   return redirect('/');
+});*/
+Route::get('/userpage',function() {
+   return view("userpage");
+});
+Route::get('/sifre_sifirlama',function(Request $request) {
 
+   return view("sifresifirlama",["email"=>$request->email,"token"=>$request->token]);
+  
+});
 Route::post('adminLogin',"App\Http\Controllers\adminlogin@loginuser");
+Route::post('sifreyenile',"App\Http\Livewire\Loginmodal@userisvalid");
 
  

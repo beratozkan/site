@@ -26,9 +26,11 @@ class DisplayUser extends Component
         
     ];
     
-    protected $listeners = ['renderpage' => 'render','changeUpdate'=>'edit'];
+    protected $listeners = ['renderpage' => 'render','changeUpdate'=>'edit',"logoutuser"=>"logout"];
 
-    
+    public function sendmail(){
+
+    }
     public function render()
     {
         $users = User::select('id','name')->get();
@@ -40,7 +42,7 @@ class DisplayUser extends Component
         
         Auth::logout();
         $request->session()->flush();
-        return redirect("/login");
+        return redirect("/userpage");
     }
     
     public function deleteconfirm($id){

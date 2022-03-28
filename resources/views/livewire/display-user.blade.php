@@ -1,21 +1,37 @@
 <div class="wrapper">
+    
    
+
+
     <div class="banner">
-    @if (auth()->user()->role == "admin")
+@if (auth()->check())
+<div class="logout" wire:click="logout">logout</div>
+
+    @if (auth()->user()->role == "admin")   
         Admin Page
+   
     </div>
     <div class="add_user">
     @livewire('user-ekle')
 
- 
+    
     </div>
+    @else
+        User Page
+       
+
+    @endif
     <div>
 @else
-    User Page
+    Guest page
 </div>
     
 @endif
-   
+
+@if(!Auth::check() || Auth::User()->role=="user") 
+   <div>boş</div> 
+
+@else  
     <div class="table">
         
         <div class="user_table" x-data="fonks()">
@@ -33,7 +49,7 @@
                     @foreach ($users as $user) 
                     @if($update && $selectedId == $user->id)
                     @livewire('edit-user',['user' => $user,'id' => $user->id ])
-                     @else
+                    @else
                     <div class="tr">
                         <span class="th c_index" style="font-weight: normal;">
                             <div class="item">
@@ -73,13 +89,15 @@
                     </div>
                     @endif @endforeach
                 </div>
-               
+                @endif    
             </div>
-            <div class="logout" wire:click="logout">logout</div>
+            
+                 
         </div>
        
-
+        
 
         
     </div>
+
 </div>
