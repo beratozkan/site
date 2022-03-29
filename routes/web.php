@@ -27,23 +27,26 @@ use Illuminate\Http\Response;
    return view('welcome');
 })->middleware('userauth');*/
 Route::get('/',function() {
-   return view('userpage');
+   return redirect('forum');
 });
-Route::get('/testekle',function() {
+Route::get('/user-ekle',function() {
    return view('welcome');
 });
 /*Route::get('{any}',function() {
    return redirect('/');
 });*/
-Route::get('/userpage',function() {
-   return view("userpage");
-});
+
 Route::get('/sifre_sifirlama',function(Request $request) {
 
    return view("sifresifirlama",["email"=>$request->email,"token"=>$request->token]);
   
+})->middleware("token.control");
+Route::get('/forum',function(Request $request) {
+
+   return view("forumindex");
+  
 });
 Route::post('adminLogin',"App\Http\Controllers\adminlogin@loginuser");
-Route::post('sifreyenile',"App\Http\Livewire\Loginmodal@userisvalid");
+Route::post('sifreyenile',"App\Http\Livewire\Loginmodal@userİsValid");
 
  

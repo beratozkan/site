@@ -15,10 +15,7 @@ class Postshare extends Component
         return view('livewire.postshare');
     }
     public function savepost(){
-        $this->validate([
-            "posttitle"=>"required",
-            
-        ])
-        UserPosts::create([])
+        
+        //UserPosts::create([])
     }
 }

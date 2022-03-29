@@ -63,7 +63,10 @@ class DisplayUser extends Component
         }
     }
   
-  
+    public function backToForum(){
+
+        return redirect("forum");
+    }
   
     public function edit($id=NULL)
     {

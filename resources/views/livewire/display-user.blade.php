@@ -5,7 +5,10 @@
 
     <div class="banner">
 @if (auth()->check())
-<div class="logout" wire:click="logout">logout</div>
+<div class="goback" wire:click="backToForum">
+<i class="material-icons" >&#xe14a;</i>
+
+</div>
 
     @if (auth()->user()->role == "admin")   
         Admin Page
@@ -29,7 +32,7 @@
 @endif
 
 @if(!Auth::check() || Auth::User()->role=="user") 
-   <div>boş</div> 
+   
 
 @else  
     <div class="table">

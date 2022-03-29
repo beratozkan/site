@@ -9,6 +9,7 @@ use Auth;
 class adminlogin extends Controller
 {
     public $msg = "";
+    
     function loginuser(Request $request)
     {
        
@@ -20,20 +21,15 @@ class adminlogin extends Controller
         
         if (Auth::attempt($credentials) ){
             
-            if(Auth()->user()->role =="admin"){
-                return redirect()->to("userpage");;
-            }
-            else{
-                return redirect()->to("userpage");
-
-            }
+            
+                return redirect()->to("forum");;
+                
+            
         }
         else{
             return back()->withErrors(["error_login"=>"user not found"]);
         }
-        
-        
-     
+        }
+       
 
-    }   
 }

@@ -272,3 +272,9 @@ span.td{
 .rightbar span{
     cursor: pointer;
 }
+.goback{
+    width: min-content;
+    height: min-content;
+    cursor: pointer;
+    display: inline-block;
+}

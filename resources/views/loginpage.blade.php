@@ -16,7 +16,7 @@
         @livewire("loginmodal")
             
     </div>
-
+    
     @livewireScripts  
 </body>
 </html>

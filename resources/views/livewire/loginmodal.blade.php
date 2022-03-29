@@ -4,8 +4,8 @@
 <label for="">email</label>
 <div class="emailfiel">
                 <input type="email" wire:model="email">
-                <div class="şifreReset" wire:click="resetpassword"> iptal</div>
-                <div  class="şifreReset" wire:click="sendmail"> onayla</div>
+                <div class="sifreResetButton" wire:click="resetPassword"> iptal</div>
+                <div  class="sifreResetButton" wire:click="sendMail"> onayla</div>
 
             </div>
             {{$message}}
@@ -14,6 +14,7 @@
 <form action="adminLogin" method="post">
 
 <div class="login_modal">
+   
             <label for="">email</label>
             <input type="text" name="email">
             <label for="">password</label>
@@ -22,7 +23,7 @@
             @error('error_login')
             <p>{{ $message }}</p>
             @enderror
-            <div  wire:click="resetpassword" class="şifreReset">şifremi unuttum</div>
+            <div  wire:click="resetPassword" class="sifreResetButton">şifremi unuttum</div>
 
             
 </div>

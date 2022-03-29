@@ -27,14 +27,10 @@
       
             
     
-    @if(!Auth::check() || Auth::User()->role=="user") 
-        @livewire("userpage")
     
-    
-    @else
                         
         @livewire('display-user')
-    @endif
+    
                       
                 @livewireScripts  
 
