@@ -1,15 +1,14 @@
-<div>
-    <form action="sifreyenile" method="post">
-    <label for="">yeni şifre</label>
-    <input type="text" name="email" value="{{$email}}" style="display:none">
-    <input type="text" name="token" value="{{$token}}" style="display:none">
-
-    <input type="text" name="password">
-    <label for="">yeni şifre tekrarı</label>
-    <input type="text" name="retypepassword">
-    
-
-    <button type="submit">onayla</button>
-
-    </form>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    @livewireStyles
+</head>
+<body>
+    @livewire("sifresifirlama",['email' => $email,"token"=>$token])
+@livewireScripts  
+</body>
+</html>

@@ -42,7 +42,7 @@
             <div class="login-box">
             <div>
             @livewire("loginmodal")
-             
+            
              </div>
         </div>
         @else

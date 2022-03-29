@@ -30,7 +30,9 @@ class Loginmodal extends Component
         return view('livewire.loginmodal',["message"=>$this->message]);
     }
     public function userİsValid(Request $request){
-       
+        if($request->password != $request->retypepassword){
+            $this->message = "şifreler aynı olmalıdır";
+        
        /* if(){
                 if($user->remember_token == $request->token && $request->email == $user->email ){
                         
@@ -47,8 +49,6 @@ class Loginmodal extends Component
         else{
             return response()->json();
         }*/
-        if($request->password != $request->retypepassword){
-            $this->message = "";
         
     }   
     else{

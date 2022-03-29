@@ -47,6 +47,6 @@ Route::get('/forum',function(Request $request) {
   
 });
 Route::post('adminLogin',"App\Http\Controllers\adminlogin@loginuser");
-Route::post('sifreyenile',"App\Http\Livewire\Loginmodal@userİsValid");
+//Route::post('sifreyenile',"App\Http\Livewire\Loginmodal@userİsValid");
 
  
