@@ -60,6 +60,8 @@ class Loginmodal extends Component
         $this->token = "http://".$_SERVER['HTTP_HOST']."/sifre_sifirlama?"."email=".$this->email."&"."token=".$this->token;
         Mail::to($this->email)->send(new resetpassword(["email"=>$this->email,"token"=>$this->token]));
         $this->message = "şifre sıfırlama başarıyle gonderildi";
+        $this->email = "";
+        
     }
 
             

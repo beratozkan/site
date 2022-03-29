@@ -10,6 +10,8 @@ class userPosts extends Model
     use HasFactory;
     protected $table = 'usersPost';
     const CREATED_AT = 'created_time';
+    protected $connection = 'mysql';
+
     protected $primaryKey = 'postid';
     protected $fillable = [
         'username',
@@ -18,5 +20,6 @@ class userPosts extends Model
         'created_time',
         'postid',
     ];
+
     
 }
