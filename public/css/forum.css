@@ -456,13 +456,14 @@ footer{
 
 .login-box{
     float:right;
+    display: inline-block;
 }
 .user-panel{
     float:right;
 }
 .top-panel{
     width:90%;
-    min-height: 50px;
+    min-height: 120px;
     margin:auto;
 }
 .sifreResetButton{
@@ -499,7 +500,43 @@ footer{
     min-height:80px;
     width: 100px;
 }
+.kayit_ol{
+    width: fit-content;
+    height: fit-content;
+    display: inline-block;
+    cursor: pointer;
+}
+.register_panel{
+    
+    float:right;
+    display: inline-flex;
+    flex-direction: column;
+}
+.register_panel div{
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+}
+.loginPanel{
+    width: min-content;
+}
+.user_information_modal{
+    width: 100px;
+    min-height: 100px;
+    background: rgba(128,128,128,0.7); /* newer browsers */
+    display:inline-flex;
+    
+    position: absolute; 
+    top:50%;
+    opacity: 1;
+    left:50%;
 
 
 
-
+}
+.add_opacity{
+    
+    
+   
+   opacity: 0.5;
+}

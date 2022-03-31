@@ -5,20 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class userPosts extends Model
+class categories extends Model
 {
     use HasFactory;
-    protected $table = 'user_post';
+    protected $table = 'category_names';
     //const CREATED_AT = 'created_time';
     protected $connection = 'mysql';
 
     //protected $primaryKey = 'postid';
     protected $fillable = [
-        'user',
-        "post_title",
-        'post_content',
-        'post_category_id',
-    ];
+        "name",
+        "category_information",
+        "main_category_id"
 
-    
+    ];
+        
 }

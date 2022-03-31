@@ -37,4 +37,4 @@
                 <span class="error">{{ $message }}</span>
                 @enderror
 
-            </div>
+</div>

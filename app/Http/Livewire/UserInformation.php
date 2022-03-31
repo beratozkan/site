@@ -26,7 +26,7 @@ class UserInformation extends Component
         return redirect("/forum");
     }
     public function userinformation(){
-
+        
     }
     public function useradd(){
 
