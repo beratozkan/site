@@ -67,14 +67,7 @@
     </div>
 
     <!-- Forum Info -->
-    <div class="forum-info">
-        <div class="chart">
-            MyForum - Stats &nbsp;<i class="fa fa-bar-chart"></i>
-        </div>
-        <span><u>5,369</u> Posts in <u> @livewire("userpost") </u> Topics by <u></u> Members.</span><br>
-        <span>Latest post: <b><a href="">Random post</a></b> on Dec 15 2021 By <a href="">RandomUser</a></span>.<br>
-        <span>Check <a href="">the latest posts</a> .</span><br>
-    </div>
+    @livewire("forumbottom")
 
     <footer>
         <span>&copy;  </span>
