@@ -5,7 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\categories;
 use App\Models\userPosts;
-
+use Illuminate\Http\RedirectResponse;
 class DisplayCategories extends Component
 {
     public $category_id;
@@ -33,5 +33,8 @@ class DisplayCategories extends Component
          $this->working_cat= userPosts::where("post_category_id",$id)->get();
 
     }
-   
+    public function subCategoryPosts($id,$name){
+        $working_cat = userPosts::where("post_category_id",$id)->get();
+        
+    }   
 }

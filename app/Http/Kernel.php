@@ -67,5 +67,8 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'userauth' => \App\Http\Middleware\userauth::class,
         'token.control' => \App\Http\Middleware\TokenControl::class,
+        "categoryIsValid"=> \App\Http\Middleware\categoryValid::class,
+        "postIsValid"=> \App\Http\Middleware\PostValid::class
+
     ];
 }

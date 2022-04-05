@@ -11,9 +11,11 @@ class userPosts extends Model
     protected $table = 'user_post';
     //const CREATED_AT = 'created_time';
     protected $connection = 'mysql';
+    
 
-    //protected $primaryKey = 'postid';
+    protected $primaryKey = 'post_id';
     protected $fillable = [
+        "post_id",
         'user',
         "post_title",
         'post_content',
