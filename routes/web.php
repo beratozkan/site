@@ -7,6 +7,7 @@ use Illuminate\Http\Response;
 use App\Models\categories;
 use App\Models\userPosts;
 use App\Models\user_comments;
+use App\Http\Controllers\ShowCategory;
 
 
 /*
@@ -44,11 +45,12 @@ Route::get('/sifre_sifirlama',function(Request $request) {
    return view("sifresifirlama",["email"=>$request->email,"token"=>$request->token]);
   
 })->middleware("token.control");
-Route::get('/forum',function(Request $request) {
+/*Route::get('/forum',function(Request $request) {
 
    return view("forumindex");
   
-});
+});*/
+Route::get('/forum',[ShowCategory::class, 'show']);
 Route::get('/forum/{sub}/',function(Request $request) {
 
      // $sub_category = categories::where("name",$c)->get()->first()->id;

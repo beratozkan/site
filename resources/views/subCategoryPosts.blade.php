@@ -32,58 +32,18 @@
       
        
         <!--SearchBox Section-->
-        <div class="search-box">
-            <div>
-                <select name="" id="">
-                    <option value="Everything">Everything</option>
-                    <option value="Titles">Titles</option>
-                    <option value="Descriptions">Descriptions</option>
-                </select>
-                <input type="text" name="q" placeholder="search ...">
-                <button><i class="fa fa-search"></i></button>
-            </div>
-        </div>
+      
     </header>
-    <div class="container">
-        <!--Navigation-->
-        <div class="navigate">
-            <span><a href="">MyForum - Forums</a> >> <a href=""></a></span>
-        
-        <!--Display posts table-->
-        <div class="posts-table">
-            <div class="table-head">
-                <div class="status">Status</div>
-                <div class="subjects">Subjects</div>
-                <div class="replies">Replies/Views</div>
-                <div class="last-reply">Last Reply</div>
-            </div>
-           
+    
             
             <!--starts here-->
-            
-            
-        
-            
-           
-           {{print_r($category_info)}}
+
                 
            @livewire("subcategory-posts", ["category_info"=>$category_info])
-                <div class="last-reply">
-                    Oct 12 2021  
-                    <br>By <b><a href="">User</a></b>
-                </div>
-            </div>
-
-
-            </div>
-            <!--ends here-->
-        </div>
-        <!--Pagination starts-->
-            <div class="pagination">
-                pages: <a href="">1</a><a href="">2</a><a href="">3</a>
-            </div>
-        <!--pagination ends-->
-    </div>
+                
+          
+        
+    
 
     <div class="note">
         <span><i class="fa fa-frown-o"></i>&nbsp; 0 Engagement Topic</span>&nbsp;&nbsp;&nbsp;<a href=""><i class="fa fa-share-square"></i></a><br>
@@ -94,7 +54,7 @@
     </div>
 
     <footer>
-        <span>&copy;  Selmi Abderrahim | All Rights Reserved</span>
+        <span>&copy;   All Rights Reserved</span>
     </footer>
     <script src="main.js"></script>
     @livewireScripts  

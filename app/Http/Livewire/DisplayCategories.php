@@ -11,6 +11,7 @@ class DisplayCategories extends Component
     public $category_id;
     public $description;
     public $name;
+    public $category;
     public $working_cat;
     public $sub_category;
     public function render()

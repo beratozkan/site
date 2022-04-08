@@ -540,3 +540,18 @@ footer{
    
    opacity: 0.5;
 }
+.reply_comment{
+    color:grey;
+    font-size:26px;
+    margin:20px;
+}
+.reply_comment_info{
+    color:grey;
+    font-size:20px;
+    margin:20px;
+}
+.yorum_yazamaz{
+    margin:20px;
+    font-size: 20px;
+    
+}

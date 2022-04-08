@@ -55,12 +55,14 @@
     </div>
              @endif
         </div>
+</div>
         @livewire("postshare")
 
-        @livewire("display-categories")
-
+       
+        @foreach($categories as $category)
         <!--More-->
-     
+            @livewire("display-categories",["category"=>$category])
+        @endforeach
             
           
         <!---->

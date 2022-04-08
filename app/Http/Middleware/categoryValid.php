@@ -19,6 +19,7 @@ class categoryValid
     {
         
         $path = explode("/",$request->path())[1];
+        $path = urldecode($path);
         
         if($f = categories::where("name",$path)->first()){
             $request->request->add(["category_id"=>$f->id]);

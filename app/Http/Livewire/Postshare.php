@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\userPosts;
 use auth;
+
 class Postshare extends Component
 {
     public $posttitle;
