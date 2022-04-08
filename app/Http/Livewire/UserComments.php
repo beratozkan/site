@@ -11,8 +11,8 @@ class UserComments extends Component
     public $post_id;
     public $show_user_comments;
     public $user_info;
-    public $make_comment;
-    public $comment;
+    public $user_reply;
+    public $comment,$reply_username,$reply_comment_content,$make_comment;
     public function render()
     {
         $this->getUserCommnets();
@@ -25,20 +25,22 @@ class UserComments extends Component
     }
    
     public function getUser($id){
-      
-        
         $user_name = user::find($id);
         $this->user_info =  [$user_name->name,$user_name->role];
     }
     public function new_comment($reply=0){
         $user_id = Auth()->id(); 
-        
+        if($this->make_comment){
+             $reply=$this->make_comment;
+        }
         user_comments::create(["comment_content"=>$this->comment,"post_id"=>$this->post_id,"user"=>$user_id,"if_is_replyed"=>$reply]);
         $this->comment = "";
     }
     public function reply_to_user($index){
-       $this->make_comment =  $this->show_user_comments[$index]->comment_id;
-        
+      $this->make_comment =  $this->show_user_comments[$index]->comment_id;
+       
+       //$this->new_comment($this->make_comment);
+
 
     }
 }

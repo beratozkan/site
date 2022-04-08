@@ -555,3 +555,20 @@ footer{
     font-size: 20px;
     
 }
+.reply_commet_button{
+display: inline-block;
+width: 80px;
+height: 35px;
+background-color: white;
+color:black;
+border-radius: 3px;
+opacity: 0.7;
+float:right;
+cursor: pointer;
+} 
+
+.reply_commet_button span{
+    position: relative;
+    top:5px;
+    left:20px;
+}

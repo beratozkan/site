@@ -4,8 +4,8 @@
 
 @foreach($comments as $index => $comment)
 
-{{$this->make_comment}}
-<div class="comments-container">
+
+<div class="comments-container" wire:ignore>
             <div class="body">
                 <div class="authors">
                 {{$this->getUser($comment->user)}}
@@ -17,7 +17,7 @@
                 </div>
                 <div class="content">
                     @if($comment->if_is_replyed)
-                    
+                       
                     <div class="reply_comment">
                     {{ $this->show_user_comments->where("comment_id",$comment->if_is_replyed)->first()->comment_content }}
                     </div>
@@ -28,7 +28,7 @@
                     <br>
                     <br>
                     <div class="comment">
-                        <button x-on:click="reply_to_user({{$index}})">Reply</button>
+                        <div class="reply_commet_button" x-on:click="reply_to_user({{$index}})"> <span>Reply</span> </div>
                     </div>
                 </div>
             </div>
@@ -38,12 +38,15 @@
         <!--Reply Area-->
 
 @if(Auth::check())
-<form wire:model:>
 
+<form  wire:ignore>
+{{$this->make_comment}}
 <div class="comment-area" id="reply-area">
+       
         <div class="reply_comment_info">
-            
+           
         </div>
+        
         <textarea x-ref="comment_area" wire:model.lazy="comment" placeholder="reply here ... "></textarea>
         <div type="submit"  wire:click="new_comment()">gönder</div>
         
@@ -64,6 +67,7 @@
             return{
 
                 reply_to_user:function($index){
+                    
                     this.$refs.comment_area.focus();
                     node_parent = this.$el.parentNode.parentNode.parentNode
                     
@@ -71,8 +75,8 @@
                     content = node_parent.getElementsByClassName("content")[0].firstChild.textContent.trim()
                     
                     document.getElementsByClassName("reply_comment_info")[0].innerText = username +" adlı kullanıcının "+"'"+content+"'"+" yorumuna cevap veriyorsunuz";
-                    
-                    
+                    this.$wire.reply_to_user($index);
+                   
                 }
             }
         }
