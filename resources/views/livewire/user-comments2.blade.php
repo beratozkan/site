@@ -3,7 +3,7 @@
 
 
 @foreach($comments as $index => $comment)
-{{$index}}
+
 
 <div class="comments-container" wire:ignore>
             <div class="body">
@@ -22,7 +22,7 @@
                     {{ $this->getreplycomment($comment->if_is_replyed)}} 
 
                     <div class="reply_comment">
-                       
+                        @foreach
                         <div>
 
                         
@@ -39,11 +39,11 @@
                     {{$comment->comment_content}}
                     </div>
                     <br><br>
-                  
+                    Nothing more and nothing less.
                     <br>
                     <br>
                     <div class="comment">
-                        <div class="reply_commet_button" x-on:click="reply_to_user({{$comment->post_id}},{{$index}})"> <span>Reply</span> </div>
+                        <div class="reply_commet_button" x-on:click="reply_to_user({{$index}})"> <span>Reply</span> </div>
                     </div>
                 </div>
             </div>
@@ -54,9 +54,8 @@
 {{$comments->links()}}
 @if(Auth::check())
 
-
 <form  wire:ignore>
-
+{{$this->make_comment}}
 <div class="comment-area" id="reply-area">
        
         <div class="reply_comment_info">
@@ -68,7 +67,6 @@
         
     
 </div>
-
 </form>
 @else
 <div class="yorum_yazamaz">
@@ -76,25 +74,23 @@
 </div>
 @endif
         </div>
-</div>
 
         <script>
         
         function to_reply(){
-            let items = document.getElementsByClassName("comments-container");
+            
             return{
 
-                reply_to_user:function($post_id,$index){
+                reply_to_user:function($index){
                     
                     this.$refs.comment_area.focus();
+                    node_parent = this.$el.parentNode.parentNode.parentNode
                     
-                    item = items[$index];
+                    username = node_parent.getElementsByClassName("username")[0].textContent
+                    content = node_parent.getElementsByClassName("content")[0].firstChild.textContent.trim()
                     
-                    username = item.getElementsByClassName("username")[0].textContent
-                    content = item.getElementsByClassName("post_reply_content")[0].innerText.trim()
-                    console.log(content);
                     document.getElementsByClassName("reply_comment_info")[0].innerText = username +" adlı kullanıcının "+"'"+content+"'"+" yorumuna cevap veriyorsunuz";
-                    this.$wire.reply_to_user($post_id);
+                    this.$wire.reply_to_user($index);
                    
                 }
             }
