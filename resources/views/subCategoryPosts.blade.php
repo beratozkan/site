@@ -16,6 +16,8 @@
 
 <body>
     <header>
+
+    
         <!--NavBar Section-->
         <div class="navbar">
             <nav class="navigation hide" id="navigation">
@@ -34,7 +36,7 @@
         <!--SearchBox Section-->
       
     </header>
-    
+   
             
             <!--starts here-->
 

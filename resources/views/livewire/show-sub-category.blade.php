@@ -10,7 +10,8 @@
                 </div>
                 <div class="subforum-stats subforum-column center">
                 {{ $this->displayCategoryPost($sub_category_posts->id) }}
-                    <span>| </span>
+                
+                    <span> {{ $this->working_cat }} |   </span>
         
                 </div>
                 <div class="subforum-info subforum-column">

@@ -9,6 +9,7 @@
             @foreach($this->sub_category as $subcat)
             
                 @livewire("show-sub-category",["sub_category_posts"=>$subcat])
+               
             @endforeach
         </div>
 

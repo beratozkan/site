@@ -5,6 +5,8 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\user_comments;
 use App\Models\User;
+use App\Models\userPosts;
+
 use auth;
 use Illuminate\Pagination\Paginator;
 
@@ -43,7 +45,10 @@ class UserComments extends Component
      
     }
     public function new_comment($reply=0){
-        $user_id = Auth()->id(); 
+        $user_id = Auth()->id();
+        $post = userPosts::where("post_id",$this->post_id)->first();
+        $post->reply_count +=1;
+        $post->save();
         if($this->make_comment){
              $reply=$this->make_comment;
         }

@@ -4,10 +4,11 @@
                 <div class="subjects">
                     <a href="/forum/{{$this->category_name}}/{{$post->post_title}}/{{$post->post_category_id}}">{{$post->post_title}}</a>
                     <br>
+                   
                     <span>Started by <b><a href="">{{ $post->user }}</a></b> </span>
                 </div>
                 <div class="replies">
-                    2 replies <br>  {{$post->view_count}} views
+                    {{$post->reply_count}} replies <br>  {{$post->view_count}} views
                 </div>
                
                 <div class="last-reply">
