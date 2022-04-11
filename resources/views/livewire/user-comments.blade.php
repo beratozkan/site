@@ -17,12 +17,27 @@
                 </div>
                 <div class="content">
                     @if($comment->if_is_replyed)
-                       
+                   
+                  
+                    {{ $this->getreplycomment($comment->if_is_replyed)}} 
+
                     <div class="reply_comment">
-                    {{ $this->show_user_comments->where("comment_id",$comment->if_is_replyed)->first()->comment_content }}
+                        @foreach
+                        <div>
+
+                        
+                        <span class="reply_post_username"> {{$this->reply_user_username->name}} : </span>
+                        <span class="reply_post_content">{{$this->replyed_post->comment_content}}</span>
+                        </div>
                     </div>
+                   
+                    
+                
+                   
                     @endif
+                    <div class="post_reply_content">
                     {{$comment->comment_content}}
+                    </div>
                     <br><br>
                     Nothing more and nothing less.
                     <br>
@@ -36,7 +51,7 @@
 
 @endforeach
         <!--Reply Area-->
-
+{{$comments->links()}}
 @if(Auth::check())
 
 <form  wire:ignore>

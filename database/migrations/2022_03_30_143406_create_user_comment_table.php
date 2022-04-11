@@ -30,6 +30,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_comment');
+        Schema::create('user_comment', function (Blueprint $table) {
+            Schema::dropIfExists('user_comment');
+        });
     }
+
 };

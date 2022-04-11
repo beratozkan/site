@@ -433,7 +433,8 @@ footer{
 
 /* comment section */
 .comment-area{
-    margin-bottom:50px;
+    
+    
 }
 
 .comment-area textarea{
@@ -543,7 +544,20 @@ footer{
 .reply_comment{
     color:grey;
     font-size:26px;
-    margin:20px;
+    margin-left:20px;
+    display: block;
+    width: max-content;
+    display: inline-block;
+}
+.post_reply_content{
+    margin-top:5px;
+    font-size: 18px;
+}
+.reply_post_username{
+    display:inline-block;
+}
+.reply_post_content{
+    display:inline-block;
 }
 .reply_comment_info{
     color:grey;
@@ -571,4 +585,10 @@ cursor: pointer;
     position: relative;
     top:5px;
     left:20px;
+}
+.paginate_comment{
+
+}
+.pagination li{
+    display: inline-block;
 }

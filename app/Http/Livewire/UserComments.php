@@ -6,27 +6,40 @@ use Livewire\Component;
 use App\Models\user_comments;
 use App\Models\User;
 use auth;
+use Illuminate\Pagination\Paginator;
+
 class UserComments extends Component
 {
     public $post_id;
-    public $show_user_comments;
-    public $user_info;
+    public $show_user_comments,$reply_user_username;
+    public $replyed_comments = array();
     public $user_reply;
-    public $comment,$reply_username,$reply_comment_content,$make_comment;
+    public $comment,$replyed_post,$make_comment;
     public function render()
     {
-        $this->getUserCommnets();
-        return view('livewire.user-comments',["comments"=>$this->show_user_comments]);
+        //$this->getUserCommnets();
+        return view('livewire.user-comments',["comments"=>user_comments::where("post_id",$this->post_id)->paginate(5)]);
     }
     public function getUserCommnets(){
        
-        $this->show_user_comments =user_comments::where("post_id",$this->post_id)->get();
+        $this->show_user_comments =user_comments::where("post_id",$this->post_id);
         
     }
    
     public function getUser($id){
         $user_name = user::find($id);
         $this->user_info =  [$user_name->name,$user_name->role];
+    }
+    public function boot()
+{
+    Paginator::useBootstrapFive();
+    Paginator::useBootstrapFour();
+}
+    public function getreplycomment($replyed_comment_id){
+        $this->replyed_post = user_comments::where("comment_id",$replyed_comment_id)->first();
+        $this->reply_user_username = User::find($this->replyed_post->user);
+       
+     
     }
     public function new_comment($reply=0){
         $user_id = Auth()->id(); 

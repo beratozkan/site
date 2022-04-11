@@ -75,7 +75,8 @@
 
         <!--Comments Section-->
         
-       @livewire("user-comments",["post_id"=>$post_content->post_id])
+       @livewire("user-comments")
+      
         <!--Another Comment With replies-->
         
         <!--Reply Area-->

@@ -25,6 +25,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropColumn('if_is_replyed');
+        Schema::table('user_comment', function (Blueprint $table) {
+            Schema::dropColumn('if_is_replyed');
+        });
+       
     }
 };
