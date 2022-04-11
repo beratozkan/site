@@ -43,7 +43,7 @@
                     <br>
                     <br>
                     <div class="comment">
-                        <div class="reply_commet_button" x-on:click="reply_to_user({{$comment->post_id}},{{$index}})"> <span>Reply</span> </div>
+                        <div class="reply_commet_button" x-on:click="reply_to_user({{$comment->comment_id}},{{$index}})"> <span>Reply</span> </div>
                     </div>
                 </div>
             </div>
