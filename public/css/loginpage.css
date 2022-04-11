@@ -1,0 +1,27 @@
+*{
+    margin:0;
+    padding:0;
+
+}
+.wrapper{
+    margin: auto;
+    width: 40%;
+    
+    text-align: center;
+}
+div {
+    display: inline-block;
+
+}
+.login_modal{
+    display:inline-flex;
+    flex-direction: column;
+    
+}
+
+.buttton{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    
+}

@@ -1,0 +1,3 @@
+<div>
+    {{ $miktar }} Members
+</div>

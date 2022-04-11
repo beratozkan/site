@@ -1,0 +1,280 @@
+
+            *{
+                margin:0;
+                padding:0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: 'Nunito', sans-serif;
+            }
+            .wrapper{
+                width:80%;
+                margin:auto;
+                position: absolute;
+                left:10%;
+                
+                
+            }
+            .error{
+               font-size:10px;
+                
+                
+            }
+            
+            }
+            .add_user{
+                
+                position: relative;
+                top:30px;
+                min-height:100px;
+                width:100%;
+            }
+            .add_user input{
+                
+                min-width:100px;
+                max-width:150px;
+                margin:10px;
+                padding:5px;
+                padding-left:0px;
+                padding-bottom:10px;
+                margin-left:0px;
+                margin-top:0px;
+                border-bottom:1px solid black;
+                border-radius:2px;
+            }
+            .add_user input:focus{
+                outline:none;
+            }
+            .add_user button{
+                width:50px;
+                height:25px;
+            }
+            .table{
+                
+                position:relative;
+                top:70px;
+
+                
+            }
+            h2{
+
+            }
+            .user_table{
+                display:infine-flex;
+                
+            }
+            table {
+        font-family: arial, sans-serif;
+   
+        width: 90%;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 5px;
+}
+.control{
+    position: relative;
+   
+    border-bottom: 1px solid #dddddd;
+}
+.control div{
+    cursor: pointer;
+    
+}
+.table input{
+ border:1px solid black;
+ width:150px;
+ 
+ 
+ padding: 5px;
+ font-family: arial, sans-serif;
+
+}
+
+
+.form2{
+    position: relative;
+    top:100px;
+}
+.form2 input{
+    border:1px solid black;
+}
+div.table2{
+    width: 90%;
+    
+    position:relative;
+    display:table;
+    border-collapse: collapse; 
+    border-spacing: 2px;border-color: grey;
+    text-indent: initial;
+}
+div.tr{
+    display:table-row;
+    position:relative;
+    border-bottom:1px solid #dddddd;
+
+    width:100%;
+    padding: 5px;
+    
+    
+
+}
+form.tr{
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+
+    
+    padding: 5px;
+}
+span.th{
+
+padding: 13px;
+text-align:center;
+position: relative;
+
+font-weight: bold;
+display:table-cell	;
+
+}
+
+
+div.tbody{
+    display: table-row-group		;
+    border-collapse: separate;
+   
+    
+}
+span.td{
+    display:table-cell	;
+    text-align: left;
+    padding: 5px;
+    margin-left:10px;
+    vertical-align: inherit;
+}
+.user_ekle{
+    display:inline-flex;
+    position: relative;
+    top:50px;
+    width:80%;
+    
+   
+
+}
+.slot{
+    display:inline-flex;
+    flex-direction:column;
+
+}
+.slot label{
+    font-size:20px;
+}
+.add_user button{
+    width:70px;
+    height:30px;
+    background-color:green;
+    float:right;
+    display:inline-block;
+    
+}
+.add_user button h2{
+    color:white;
+
+}
+.c_index{
+
+}
+.name{
+    left:10px;
+    right:20px;
+}
+
+.email{
+    margin-left:25px;
+    margin-right:10px;
+    
+    
+}
+.c_id input{
+    width:5px;
+}
+    
+.confirmdel{
+
+
+
+}
+.container {
+  display: ""; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+ 
+  width: 30%; /* Full width */
+  height: 30%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  opacity: 0.7;
+  padding: 50px;
+}
+.logout{
+    display:inline-block;
+   
+    cursor: pointer;
+    float:left;
+    color:red;
+}
+.banner {
+    float:left;
+    position: relative;
+    top:50px;
+    right:50px;
+    color:red;
+}
+.login_modal{
+    display:inline-flex;
+    flex-direction: column;
+    
+}
+
+.buttton{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    
+}
+.loginPanel{
+    float:right;
+    position: relative;
+    top:50px;
+
+}
+.loginPanel input{
+    border:1px solid;
+}
+.nav{
+    
+    width: 90%;
+    min-height:20px;
+
+}
+.rightbar{
+    float: right;
+    display: inline-flex;
+}
+.leftbar{
+    float: left;
+    display:inline-flex;
+}
+.leftbar span{
+    cursor: pointer;
+}
+.rightbar span{
+    cursor: pointer;
+}
+.goback{
+    width: min-content;
+    height: min-content;
+    cursor: pointer;
+    display: inline-block;
+}
